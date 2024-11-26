@@ -1,4 +1,4 @@
-### Docker setup to use p2p over VPN
+### Docker setup to use qBittorrent over VPN
 
 Containers used:
   - Gluetun: https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers
