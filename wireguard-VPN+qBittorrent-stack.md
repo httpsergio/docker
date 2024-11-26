@@ -86,10 +86,9 @@ The gluetun will start to connect to the wireguard profile from your vpn provide
 This port is random and could be other in the next container/Host restart. Since we need to inform qbittorrent what is the used port so it can connect correctly, we need to first get the port and then pass it to the qbittorrent container. 
 This method will allow us to have the stack running withou having to edit the docker compose file with the new port for qbittorrent.
 
-The random port is written by gluetun container to the internal path `/tmp/gluetun/forwarded_port` and that file is mounted to the docker host in the file tmp-vpn-port. (check docker compose file line 52)
-`- ./temp-vpn-port:/tmp/gluetun/forwarded_port:rw`
+The random port is written by gluetun container to the internal path `/tmp/gluetun/forwarded_port` and that file is mounted to the docker host in the file tmp-vpn-port. Check docker compose file line 26: `- ./temp-vpn-port:/tmp/gluetun/forwarded_port:rw`
 
-Then the temp-vpn-port is mounted to the qbittorrent docker container.
+Then the temp-vpn-port is mounted to the qbittorrent docker container. Check docker compose file line 52: ` - ./temp-vpn-port:/tmp/gluetun/forwarded_port:ro`
 
 Created a script to pass the tmp-vpn-port to the qbittorrent container variable `TORRENTING_PORT`
 
@@ -109,6 +108,11 @@ export TORRENTING_PORT=$QB_PORT_FROM_GLUETUN
 # Execute the original entrypoint command for qbittorrent
 exec /init
 ````
-This script should be located in the same path as the docker-compose.yml file
+This script should be located in the same path as the docker-compose.yml file and have execute permissions `chmod +x /path/to/file/entrypoint.sh`
+
+### Note
+
+If you restart your docker host or stop the containers, you should always start the gluetun container first so it writes the random port to the file and then start the qbittorrent container.
+
 
 
