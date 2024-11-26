@@ -8,8 +8,6 @@ VPN Provider: [protonvpn](https://protonvpn.com/) (you can use [other providers]
 
 Protocol: Wireguard (it works with OpenVPN too, check Gluetun documentation)
 
-**If you are here, you know why you want to protect your p2p activity.**
-
 ###Steps
 
 - First, you need to get a wireguard profile from your ProtonVPN account: https://protonvpn.com/support/wireguard-configurations
