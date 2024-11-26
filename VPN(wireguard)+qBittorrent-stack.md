@@ -3,7 +3,7 @@
 Containers used:
   - [Gluetun](https://github.com/qdm12/gluetun)
   - [qBittorrent](https://hub.docker.com/r/linuxserver/qbittorrent)
-  - 
+    
 VPN Provider: [protonvpn](https://protonvpn.com/) (you can use other providers. See: https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers)
 Protocol: Wireguard (it works with OpenVPN too, check Gluetun documentation)
 
