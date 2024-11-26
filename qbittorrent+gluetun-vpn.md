@@ -75,7 +75,7 @@ services:
       - ./entrypoint.sh:/entrypoint.sh  # Mount custom entrypoint script
     entrypoint: ["/bin/bash", "/entrypoint.sh"]  
     restart: no
-```
+````
 ### Explanation
 
 When the stack is depolyed, first the gluetun is created and started and only after that, the qbittorrent container will be created (see the docker compose, line 40).
@@ -108,7 +108,7 @@ export TORRENTING_PORT=$QB_PORT_FROM_GLUETUN
 
 # Execute the original entrypoint command for qbittorrent
 exec /init
-```
+````
 This script should be located in the same path as the docker-compose.yml file
 
 
