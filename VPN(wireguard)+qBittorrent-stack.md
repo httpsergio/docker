@@ -5,6 +5,7 @@ Containers used:
   - [qBittorrent](https://hub.docker.com/r/linuxserver/qbittorrent)
     
 VPN Provider: [protonvpn](https://protonvpn.com/) (you can use [other providers](https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers).
+
 Protocol: Wireguard (it works with OpenVPN too, check Gluetun documentation)
 
 **If you are here, you know why you want to protect your p2p activity.**
