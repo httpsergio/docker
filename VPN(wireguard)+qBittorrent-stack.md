@@ -8,7 +8,7 @@ VPN Provider: [protonvpn](https://protonvpn.com/) (you can use [other providers]
 
 Protocol: Wireguard (it works with OpenVPN too, check Gluetun documentation)
 
-###Steps
+### Steps
 
 - First, you need to get a wireguard profile from your ProtonVPN account: https://protonvpn.com/support/wireguard-configurations
 (you should select NAT-PMP and VPN Accelerator only, from the options)
