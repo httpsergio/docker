@@ -1,10 +1,10 @@
 ### Docker setup to use qBittorrent over VPN
 
 Containers used:
-  - Gluetun: https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers
-  - qBittorrent: https://github.com/qdm12/gluetun
-
-VPN Provider: protonvpn (you can use other providers. See: https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers)
+  - [Gluetun](https://github.com/qdm12/gluetun)
+  - [qBittorrent](https://hub.docker.com/r/linuxserver/qbittorrent)
+  - 
+VPN Provider: [protonvpn](https://protonvpn.com/) (you can use other providers. See: https://github.com/qdm12/gluetun-wiki/tree/main/setup/providers)
 Protocol: Wireguard (it works with OpenVPN too, check Gluetun documentation)
 
 **If you are here, you know why you want to protect your p2p activity.**
