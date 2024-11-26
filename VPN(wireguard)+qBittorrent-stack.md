@@ -1,4 +1,4 @@
-### Docker setup to use qBittorrent over VPN
+### Docker setup to use qBittorrent over VPN with port forwarding.
 
 Containers used:
   - [Gluetun](https://github.com/qdm12/gluetun)
@@ -83,7 +83,7 @@ When the stack is depolyed, first the gluetun is created and started and only af
 
 The gluetun will start to connect to the wireguard profile from your vpn provider and a random port will be assigned to your gluetun. 
 This port is random and could be other in the next container/Host restart. Since we need to inform qbittorrent what is the used port so it can connect correctly, we need to first get the port and then pass it to the qbittorrent container. 
-This method will allow us to have the stack running withou having to edit the docker compose file with the new port for qbittorrent.
+This method will allow us to have the stack running without having to edit the docker compose file with the new port for qbittorrent.
 
 The random port is written by gluetun container to the internal path `/tmp/gluetun/forwarded_port` and that file is mounted to the docker host in the file tmp-vpn-port. Check docker compose file line 26: `- ./temp-vpn-port:/tmp/gluetun/forwarded_port:rw`
 
@@ -112,6 +112,7 @@ This script should be located in the same path as the docker-compose.yml file an
 ### Note
 
 If you restart your docker host or stop the containers, you should always start the gluetun container first so it writes the random port to the file and then start the qbittorrent container.
+
 
 
 
